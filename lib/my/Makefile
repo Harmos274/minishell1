@@ -12,7 +12,6 @@ SRC =	my_strconc.c \
 		my_str_to_word_array.c \
 		my_putstr.c \
 		my_strcomp.c \
-		clean_str.c \
 		my_strncpy.c \
 		my_printab.c \
 		my_alloc.c \

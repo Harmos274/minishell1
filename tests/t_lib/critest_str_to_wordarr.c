@@ -19,7 +19,6 @@ Test(my_str_to_wordarray, simple_space_separator)
 
     cr_redirect_stdout();
     cr_assert(tab != NULL);
-    cr_assert_str_eq(tab[0], "Roses");
     while (tab[i] != NULL) {
         write(1, tab[i], my_strlen(tab[i]));
         write(1, "\n", 1);

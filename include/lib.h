@@ -15,7 +15,6 @@
     char *my_strconc(char *left, char *env_line);
     int my_strcomp(char *source, char *compared);
     void my_putstr(char *str);
-    void clean_str(char *str);
     char *my_strncpy(char *dest, char *src, size_t n);
     char **my_str_to_wordarray(char *str, char d, int prefix);
     void my_printab(char **tab);

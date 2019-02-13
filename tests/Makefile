@@ -21,7 +21,6 @@ ALL_MY_FILES = ../sources/my_exec.c \
 				../lib/my/my_str_to_word_array.c \
 				../lib/my/my_putstr.c \
 				../lib/my/my_strcomp.c \
-				../lib/my/clean_str.c \
 				../lib/my/my_strncpy.c \
 				../lib/my/my_printab.c \
 				../lib/my/my_alloc.c \
@@ -45,7 +44,8 @@ ALL_MY_FILES = ../sources/my_exec.c \
 
 SRC_T_LIB =		./t_lib/critest_str_to_wordarr.c \
 				./t_lib/critest_strconc.c \
-				./t_lib/critest_supr_prefix.c
+				./t_lib/critest_supr_prefix.c \
+				./t_lib/critest_printf.c
 
 OBJ_T_LIB = 	$(SRC_T_LIB:.c=.o)
 

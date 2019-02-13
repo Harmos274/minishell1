@@ -13,6 +13,6 @@ void my_putchar_varg(va_list ap, int *nbc)
     char c = (char)va_arg(ap, int);
 
     (void)nbc;
-    write(1, &c, 1);
+    write(2, &c, 1);
     *nbc += 1;
 }

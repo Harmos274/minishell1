@@ -12,4 +12,5 @@
     char *my_pathconc(char *left, char *right);
     char *grepath(char **envp);
     int envar_comp(char *env_line, char *compa);
+    int my_printf(const char *format, ...);
 #endif /* !SOURCE_H_ */

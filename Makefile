@@ -9,6 +9,11 @@ RULE = RULE
 
 TEST_RULE = TERION
 
+GCV = gcovr
+GCVNAME = coverage.html
+GCVFLAGS = --html --html-details
+GCVEXCLUDE = --exclude tests/
+
 all: $(RULE)
 
 $(RULE):
@@ -20,10 +25,11 @@ $(RULE):
 $(TEST_RULE):
 	@echo -e "\e[1;34m\nCRITERION IS A SIN :\n\e[0m"
 	@make re -C ./tests --no-print-directory
+	@echo -e "\e[1;34m\n\nCOVERAGE :\n\e[0m"
+	@$(GCV) $(GCVEXCLUDE) 
+	@$(GCV) -r . $(GCVFLAGS) -o $(GCVNAME) $(GCVEXCLUDE)
 
 tests_run: fclean $(TEST_RULE)
-	@echo -e "\e[1;34m\n\nCOVERAGE :\n\e[0m"
-	@gcovr --exclude tests/ --branches
 
 clean:
 	@echo -e "\e[2;32m\nCLEANING : \n\e[0m"

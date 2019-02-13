@@ -17,7 +17,6 @@ void my_put_nbr_varg(va_list ap, int *nbc)
 
     while ((nb / power) > 10)
         power = power * 10;
-
     while (power > 0) {
         c = nb % power;
         ab = (nb - c) / power;
