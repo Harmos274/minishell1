@@ -10,5 +10,10 @@
 
 void my_putstr(char *str)
 {
-    write(1, str, my_strlen(str));
+    size_t i = 0;
+
+    while (str && str[i] != '\0') {
+        write(1, &str[i], 1);
+        ++i;
+    }
 }

@@ -9,12 +9,12 @@
 
 void my_put_base_nbr(int nb, char *base)
 {
-    if (nb / (my_strlen(base) - 1) != 0)
-        my_put_base_nbr(nb / (my_strlen(base) -1) , base);
-    my_putchar(base[nb % (my_strlen(base) - 1)]);
+    if (nb / (my_printf_strlen(base) - 1) != 0)
+        my_put_base_nbr(nb / (my_printf_strlen(base) -1) , base);
+    my_printf_putchar(base[nb % (my_printf_strlen(base) - 1)]);
 }
 
-void my_put_nbr(int nb)
+void my_printf_put_nbr(int nb)
 {
     my_put_base_nbr(nb, "0123456789\0");
 }

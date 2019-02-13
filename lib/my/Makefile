@@ -45,10 +45,14 @@ all: $(NAME)
 
 clean:
 	@rm -f $(OBJ)
+	rm -f *.gcda
+	rm -f *.gcno
+	rm -f ./my_printf/*.gcno
+	rm -f ./my_printf/*.gcda
 
 fclean: clean
-	@rm -f libmy.a
-	@rm -f $(NAME)
+	rm -f libmy.a
+	rm -f $(NAME)
 
 re: fclean all
 

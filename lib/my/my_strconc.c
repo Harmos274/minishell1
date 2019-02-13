@@ -15,13 +15,13 @@ char *my_strconc(char *left, char *env_line)
     size_t i = 0;
     size_t k = 0;
 
-    if (str == NULL)
-        exit (84);
-    while (left[i] != '\0') {
+    if (str == NULL || (my_strlen(left) == -1 || my_strlen(env_line) == -1))
+        return (NULL);
+    while (left && left[i] != '\0') {
         str[i] = left[i];
         i++;
     }
-    while (env_line[k] != '\0') {
+    while (env_line && env_line[k] != '\0') {
         str[i] = env_line[k];
         i++;
         k++;

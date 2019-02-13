@@ -11,7 +11,6 @@
 void my_printab(char **tab)
 {
     size_t i = 0;
-
     while (tab[i][0] == '\0')
             ++i;
     while (tab[i] != NULL) {

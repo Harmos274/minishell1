@@ -33,10 +33,12 @@ all: $(NAME)
 
 clean:
 	@rm -f $(OBJ)
+	rm -f *.gcda
+	rm -f *.gcno
 
 fclean: clean
-	@rm -f libmy.a
-	@rm -f $(NAME)
+	rm -f libmy.a
+	rm -f $(NAME)
 
 re: fclean all
 

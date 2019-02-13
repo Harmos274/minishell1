@@ -12,6 +12,8 @@ int envar_comp(char *env_line, char *compa)
 {
     size_t i = 0;
 
+    if (env_line == NULL || compa == NULL)
+        return (84);
     while (env_line[i] != '=') {
         if (env_line[i] != compa[i])
             return (FALSE);

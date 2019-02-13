@@ -11,13 +11,13 @@
     #include <stddef.h>
     #include <stdlib.h>
 
-    size_t my_strlen(char const *str);
+    ssize_t my_strlen(char const *str);
     char *my_strconc(char *left, char *env_line);
     int my_strcomp(char *source, char *compared);
     void my_putstr(char *str);
     void clean_str(char *str);
     char *my_strncpy(char *dest, char *src, size_t n);
-    char **my_str_to_wordtab(char *str, char d, int prefix);
+    char **my_str_to_wordarray(char *str, char d, int prefix);
     void my_printab(char **tab);
     char **my_tab_alloc(size_t size);
     char *my_str_alloc(size_t size);

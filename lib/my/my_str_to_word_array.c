@@ -15,7 +15,7 @@ int is_good(char c, char d)
     return (1);
 }
 
-size_t word_count(char *str, char d)
+size_t word_counter(char *str, char d)
 {
     size_t i = 0;
     size_t word = 0;
@@ -28,9 +28,9 @@ size_t word_count(char *str, char d)
     return (word);
 }
 
-char **my_str_to_wordtab(char *str, char d, int prefix)
+char **my_str_to_wordarray(char *str, char d, int prefix)
 {
-    char **wordtab = malloc(sizeof(char *) * (word_count(str, d) + 1));
+    char **wordtab = malloc(sizeof(char *) * (word_counter(str, d) + 1));
     size_t y = 0;
     size_t e = prefix;
     size_t len = 0;

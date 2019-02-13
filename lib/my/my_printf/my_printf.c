@@ -18,12 +18,12 @@ void pointr(va_list ap, char c, int *nbc)
     int tmp = match(c, ref);
 
     if (c == '%') {
-        my_putchar('%');
+        my_printf_putchar('%');
         return ;
     }
     if (tmp == -1) {
-        my_putchar('%');
-        my_putchar(c);
+        my_printf_putchar('%');
+        my_printf_putchar(c);
         *nbc += 2;
         return ;
     }
@@ -33,7 +33,7 @@ void pointr(va_list ap, char c, int *nbc)
 int match(char format, char *reader)
 {
     int e = 0;
-    int r = my_strlen(reader);
+    int r = my_printf_strlen(reader);
 
     while (e != r) {
         if (format == reader[e])
@@ -54,7 +54,7 @@ int my_printf(const char *format, ...)
         if (format[i] == '%')
             pointr(ap, format[++i], &nbc);
         else {
-            my_putchar(format[i]);
+            my_printf_putchar(format[i]);
             nbc++;
         }
         i++;

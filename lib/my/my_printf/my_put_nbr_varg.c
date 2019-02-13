@@ -21,7 +21,7 @@ void my_put_nbr_varg(va_list ap, int *nbc)
     while (power > 0) {
         c = nb % power;
         ab = (nb - c) / power;
-        my_putchar(ab + '0');
+        my_printf_putchar(ab + '0');
         *nbc += 1;
         nb = c;
         power = power / 10;

@@ -7,12 +7,12 @@
 
 #include "my.h"
 
-int my_putstr(char const *str, int *nbc)
+int my_printf_putstr(char const *str, int *nbc)
 {
     int a = 0;
 
     while (str[a] != '\0') {
-        my_putchar(str[a]);
+        my_printf_putchar(str[a]);
         a++;
         *nbc += 1;
     }

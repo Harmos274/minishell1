@@ -6,13 +6,14 @@
 */
 
 #include <lib.h>
+#include <unistd.h>
 
-size_t my_strlen(char const *str)
+ssize_t my_strlen(char const *str)
 {
-    size_t i = 0;
+    ssize_t i = 0;
 
     if (!str)
-        return (84);
+        return (-1);
     while (str && str[i] != '\0') {
         i++;
     }

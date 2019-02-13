@@ -15,11 +15,11 @@ void my_putstr_varg(va_list ap, int *nbc)
     char *str = va_arg(ap, char *);
 
     if (str == NULL) {
-        my_putstr("(null)", nbc);
+        my_printf_putstr("(null)", nbc);
         return ;
     }
     while (str[a] != '\0') {
-        my_putchar(str[a]);
+        my_printf_putchar(str[a]);
         a++;
         *nbc += 1;
     }

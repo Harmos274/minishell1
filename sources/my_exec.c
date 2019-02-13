@@ -17,7 +17,7 @@ int prompt(char **envp)
 
     while (ret != -1) {
         my_putstr(getcwd(NULL, 0));
-        my_printf(" > ", getcwd(NULL, 0));
+        write(1, " > ", 3);
         signal(SIGINT, SIG_IGN);
         ret = getline(&stream, &n, stdin);
         if ((ret != -1) && (call_me(stream, &envp) == 84)) {

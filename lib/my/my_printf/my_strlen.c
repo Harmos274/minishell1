@@ -5,11 +5,11 @@
 ** count cases
 */
 
-int my_strlen(char const *src)
+int my_printf_strlen(char const *src)
 {
     int i = 0;
 
-    while (src[i++] != '\0')
-        i++;
+    while (src[i] != '\0')
+        ++i;
     return (i);
 }

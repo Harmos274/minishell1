@@ -8,6 +8,7 @@
 #include "lib.h"
 #include <stddef.h>
 #include <stdio.h>
+#include <unistd.h>
 
 char *supr_prefix(char *str, char *prefix)
 {
@@ -15,7 +16,7 @@ char *supr_prefix(char *str, char *prefix)
     size_t i = 0;
     size_t j = my_strlen(prefix);
 
-    if (new_str == NULL)
+    if (new_str == NULL || str == NULL || prefix == NULL)
         return (NULL);
     while (str && str[j] != '\0') {
         new_str[i] = str[j];

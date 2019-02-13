@@ -18,8 +18,8 @@ char *my_pathconc(char *left, char *right)
     size_t i = 0;
     size_t e = 0;
 
-    if (str == NULL)
-        return (NULL);
+    if (str == NULL || left == NULL || right == NULL)
+        return (right);
     while (left && (left[i] != '\0')) {
         str[i] = left[i];
         ++i;
@@ -39,7 +39,7 @@ char *make_path(char *path, char **env_path)
 {
     size_t i = 0;
 
-    if (access(path, X_OK) == 0)
+    if (access(path, X_OK) == 0 || path == NULL)
         return (path);
     while (env_path[i] != NULL) {
         if (access(my_pathconc(env_path[i], path), X_OK) == 0) {
@@ -78,7 +78,7 @@ char *grepath(char **envp)
 {
     size_t i = 0;
 
-    while (envp[i] != NULL) {
+    while (envp && envp[i] != NULL) {
         if (envar_comp(envp[i], "PATH") == TRUE) {
             return (envp[i]);
         }
@@ -94,8 +94,8 @@ int call_me(char *stream, char ***envp)
 
     if (stream[0] == '\n')
         return (0);
-    env_path = my_str_to_wordtab(grepath(*envp), ':', 5);
-    arg = my_str_to_wordtab(stream, ' ', 0);
+    env_path = my_str_to_wordarray(grepath(*envp), ':', 5);
+    arg = my_str_to_wordarray(stream, ' ', 0);
     if (built_in_command(arg[0], arg, envp) == -1)
         my_exec(env_path, arg[0], arg, *envp);
     return (0);

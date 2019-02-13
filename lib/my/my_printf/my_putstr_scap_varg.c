@@ -14,14 +14,14 @@ void my_putstr_scap_varg(va_list ap, int *nbc)
 
     while (str[a] != '\0') {
         while (((str[a] < 32) || (str[a] >= 127)) && (str[a] != '\0')) {
-            my_putchar('\\');
-            my_put_base(str[a], "01234567", nbc);
+            my_printf_putchar('\\');
+            my_printf_put_base(str[a], "01234567", nbc);
             a++;
             a++;
         }
         if (str[a] == '\0')
             return;
-        my_putchar(str[a]);
+        my_printf_putchar(str[a]);
         a++;
         *nbc += 1;
     }
